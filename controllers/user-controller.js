@@ -25,6 +25,10 @@ const userController = {
             .populate({
                 path: 'thoughts',
                 select: '-__v'
+            }) //check on friends being able to populate
+            .populate({
+                path: 'friends',
+                select: '-__v'
             })
             .select('-__v')
             .then(dbUserData => {
